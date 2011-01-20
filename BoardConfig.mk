@@ -63,6 +63,8 @@ BOARD_USES_GPSSHIM:=true
 
 BOARD_GPS_LIBRARIES := libgps
 
+BOARD_USE_KINETO_COMPATIBILITY := true
+
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
 
 TARGET_BOOTLOADER_BOARD_NAME := sapphire
@@ -84,3 +86,4 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x127c0000
 
 #TARGET_RECOVERY_UI_LIB := librecovery_ui_sapphire librecovery_ui_htc
 TARGET_PREBUILT_KERNEL := device/htc/dream_sapphire/kernel
+LOCAL_KERNEL := device/htc/dream_sapphire/prebuilt/kernel
