@@ -37,7 +37,15 @@ PRODUCT_PROPERTY_OVERRIDES := \
     keyguard.no_require_sim=true \
     ro.ril.hsxpa=2 \
     ro.ril.gprsclass=10 \
-    ro.media.dec.jpeg.memcap=10000000
+    ro.media.dec.jpeg.memcap=10000000 \
+    ro.com.google.clientidbase=android-tmobile-us \
+    ro.com.google.clientidbase.vs=android-hms-tmobile-us \
+    ro.com.google.clientidbase.ms=android-hms-tmobile-us \
+    ro.com.google.locationfeatures=1 \
+    ro.com.google.networklocation=1 \
+    ro.setupwizard.enable_bypass=1 \
+    ro.media.dec.aud.wma.enabled=1 \
+    ro.media.dec.vid.wmv.enabled=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/system/lib/libhtc_ril.so \
