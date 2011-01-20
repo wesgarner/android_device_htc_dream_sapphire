@@ -33,7 +33,9 @@ PRODUCT_PACKAGES += \
 	vold.fstab \
 	wlan_loader \
 	tiwlan.ini \
-	libOmxCore
+	libOmxCore \
+	gps.trout \
+	gps.sapphire
 	
 
 # Install the features available on this device.
