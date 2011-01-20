@@ -36,7 +36,6 @@ PRODUCT_PACKAGES += \
 	libOmxCore \
 	gps.trout \
 	gps.sapphire
-	
 
 # Install the features available on this device.
 PRODUCT_COPY_FILES += \
@@ -46,6 +45,12 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
+
+PRODUCT_COPY_FILES += \
+    device/htc/dream_sapphire/prebuilt/init.trout.rc:root/init.trout.rc \
+    device/htc/dream_sapphire/prebuilt/init.sapphire.rc:root/init.sapphire.rc \
+    device/htc/dream_sapphire/prebuilt/ueventd.trout.rc:root/ueventd.trout.rc \
+    device/htc/dream_sapphire/prebuilt/ueventd.sapphire.rc:root/ueventd.sapphire.rc
 
 PRODUCT_PROPERTY_OVERRIDES := \
     keyguard.no_require_sim=true \
