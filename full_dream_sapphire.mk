@@ -48,11 +48,29 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
 
+# Prebuilt stuff
 PRODUCT_COPY_FILES += \
     device/htc/dream_sapphire/prebuilt/init.trout.rc:root/init.trout.rc \
     device/htc/dream_sapphire/prebuilt/init.sapphire.rc:root/init.sapphire.rc \
+    device/htc/dream_sapphire/prebuilt/build.trout.prop:system/build.trout.prop \
+    device/htc/dream_sapphire/prebuilt/build.sapphire.prop:system/build.sapphire.prop \
     device/htc/dream_sapphire/prebuilt/ueventd.trout.rc:root/ueventd.trout.rc \
-    device/htc/dream_sapphire/prebuilt/ueventd.sapphire.rc:root/ueventd.sapphire.rc
+    device/htc/dream_sapphire/prebuilt/ueventd.sapphire.rc:root/ueventd.sapphire.rc \
+    device/htc/dream_sapphire/prebuilt/vold.fstab:system/etc/vold.fstab
+
+# Keychars / Keylayout / Headset
+PRODUCT_COPY_FILES += \
+    device/htc/dream_sapphire/keylayout/trout-keypad.kcm:system/usr/keychars/trout-keypad.kcm \
+    device/htc/dream_sapphire/keylayout/trout-keypad-qwertz.kcm:system/usr/keychars/trout-keypad-qwertz.kcm \
+    device/htc/dream_sapphire/keylayout/trout-keypad-v2.kcm:system/usr/keychars/trout-keypad-v2.kcm \
+    device/htc/dream_sapphire/keylayout/trout-keypad-v3.kcm:system/usr/keychars/trout-keypad-v2.kcm \
+    device/htc/dream_sapphire/keylayout/trout-keypad.kl:system/usr/keylayout/trout-keypad.kl \
+    device/htc/dream_sapphire/keylayout/trout-keypad-qwertz.kl:system/usr/keylayout/trout-keypad-qwertz.kl \
+    device/htc/dream_sapphire/keylayout/trout-keypad-v2.kl:system/usr/keylayout/trout-keypad-v2.kl \
+    device/htc/dream_sapphire/keylayout/trout-keypad-v3.kl:system/usr/keylayout/trout-keypad-v2.kl \
+    device/htc/dream_sapphire/keylayout/sapphire-keypad.kcm:system/usr/keychars/trout-keypad.kcm \
+    device/htc/dream_sapphire/keylayout/sapphire-keypad.kl:system/usr/keylayout/trout-keypad.kl \
+    device/htc/dream_sapphire/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl
 
 PRODUCT_PROPERTY_OVERRIDES := \
     keyguard.no_require_sim=true \
@@ -101,6 +119,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     device/htc/dream_sapphire/media_profiles.xml:/system/etc/media_profiles.xml
 
+# Kernel stuff
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := device/htc/dream_sapphire/kernel
 else
@@ -108,7 +127,8 @@ else
 endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
+    $(LOCAL_KERNEL):kernel \
+    device/htc/dream_sapphire/prebuilt/wlan.ko:/system/lib/modules/wlan.ko \
 
 ## (2) Also get non-open-source aspects if available
 $(call inherit-product-if-exists, vendor/htc/dream_sapphire/dream_sapphire-vendor.mk)
