@@ -22,6 +22,8 @@
 # against the traditional rules of inheritance).
 USE_CAMERA_STUB := true
 
+JS_ENGINE := v8
+
 # inherit from the proprietary version
 -include vendor/htc/dream_sapphire/BoardConfigVendor.mk
 
