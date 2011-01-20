@@ -35,7 +35,9 @@ PRODUCT_PACKAGES += \
 	tiwlan.ini \
 	libOmxCore \
 	gps.trout \
-	gps.sapphire
+	gps.sapphire \
+	copybit.msm7k \
+	gralloc.msm7k
 
 # Install the features available on this device.
 PRODUCT_COPY_FILES += \
